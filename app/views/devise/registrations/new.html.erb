@@ -1,18 +1,31 @@
-<h2>Sign up</h2>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <div class="well">
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+      <form class="bs-example form-horizontal">
+        <fieldset>
+          <legend>Sign Up</legend>
+            <div class="form-group">
+              <div class="col-lg-10">
+                <%= f.label :email %>
+                <%= f.email_field :email, :autofocus => true, class: "form-control", placeholder: "Email" %><br>
+              </div>
+            </div>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+      <div class="form-group">
+        <div class="col-lg-10">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "form-control", placeholder: "Password"  %><br>
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password"  %><br>
+          <%= f.submit "Sign up" %>
+        </div>
+      </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
+      <% end %>
+      </fieldset>
+    </form>
 <%= render "devise/shared/links" %>
+  </div>
+</div>
