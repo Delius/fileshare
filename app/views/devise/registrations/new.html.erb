@@ -13,19 +13,19 @@
               </div>
             </div>
 
-      <div class="form-group">
-        <div class="col-lg-10">
-          <%= f.label :password %>
-          <%= f.password_field :password, class: "form-control", placeholder: "Password"  %><br>
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password"  %><br>
-          <%= f.submit "Sign up" %>
-        </div>
-      </div>
-
+          <div class="form-group">
+            <div class="col-lg-10">
+              <%= f.label :password %>
+              <%= f.password_field :password, class: "form-control", placeholder: "Password"  %><br>
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password"  %><br>
+              <%= f.submit "Sign up" %>
+            </div>
+          </div>
+        </fieldset>
+      </form>
       <% end %>
-      </fieldset>
-    </form>
+
 <%= render "devise/shared/links" %>
   </div>
 </div>
