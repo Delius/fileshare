@@ -1,4 +1,5 @@
 Dbsite::Application.routes.draw do
+  devise_for :users
   resources :uploads
 # root to: "uploads#index"
 root to: 'pages#home'

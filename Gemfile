@@ -39,6 +39,7 @@ gem 'bootstrap-sass'
 gem 'jquery-fileupload-rails'
 gem 'paperclip'
 gem 'twitter-bootstrap-rails'
+gem 'devise'
 
 group :production do
   gem 'pg'
