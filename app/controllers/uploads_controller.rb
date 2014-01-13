@@ -2,8 +2,11 @@ class UploadsController < ApplicationController
   # GET /uploads
   # GET /uploads.json
   def index
-    @uploads = Upload.all
-
+    if current_user.email == "10halec@gmail.com"
+      @uploads = Upload.all
+    else
+      @uploads = current_user.uploads.all
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @uploads.map{|upload| upload.to_jq_upload } }
@@ -24,7 +27,7 @@ class UploadsController < ApplicationController
   # GET /uploads/new
   # GET /uploads/new.json
   def new
-    @upload = Upload.new
+    @upload = current_user.uploads.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +37,13 @@ class UploadsController < ApplicationController
 
   # GET /uploads/1/edit
   def edit
-    @upload = Upload.find(params[:id])
+    @upload = current_user.uploads.find(params[:id])
   end
 
   # POST /uploads
   # POST /uploads.json
   def create
-    @upload = Upload.new(upload_params)
+    @upload = current_user.uploads.new(upload_params)
 
     respond_to do |format|
       if @upload.save
@@ -60,7 +63,7 @@ class UploadsController < ApplicationController
   # PUT /uploads/1
   # PUT /uploads/1.json
   def update
-    @upload = Upload.find(params[:id])
+    @upload = current_user.uploads.find(params[:id])
 
     respond_to do |format|
       if @upload.update_attributes(upload_params)

@@ -4,6 +4,8 @@ class Upload < ActiveRecord::Base
 
   include Rails.application.routes.url_helpers
 
+  belongs_to :user
+
   def to_jq_upload
     {
       "name" => read_attribute(:upload_file_name),
