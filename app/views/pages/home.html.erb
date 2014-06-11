@@ -4,12 +4,20 @@
       <div class="page-header" id="banner">
         <div class="row">
           <div class="col-lg-6">
-            <h1>File Share</h1>
-            <p class="lead">Upload and Download</p>
+            <h1>Cloud File Share</h1>
+            <p class="lead">A Ruby on Rails Project</p>
           </div>
           <div class="col-lg-6">
             <div class="bsa well">
-                <p>This is test testasdf kalsdf jalksjdf laksjdf alskjd fasdjf alkshis is test testasdf kalsdf jalksjdf laksjdf alskjd fasdjf alkshis is test testasdf kalsdf jalksjdf laksjdf alskjd fasdjf alkshis is test testasdf kalsdf jalksjdf laksjdf alskjd fasdjf alkshis is test testasdf kalsdf jalksjdf laksjdf alskjd fasdjf alkshis is test testasdf kalsdf jalksjdf laksjdf alskjd fasdjf alkshis is test testasdf kalsdf jalksjdf laksjdf alskjd fasdjf alks </p>
+		<p>
+		  <% if Upload.first.nil? %>
+		    
+		  <% else %>
+		   <p class="lead">Last Uploaded File:</p> 
+		    <b>Title: </b><%= Upload.order(:created_at).last.upload_file_name %><br/>
+		    <b>Type: </b><%= Upload.order(:created_at).last.upload_content_type %>
+		  <% end %>
+		</p>
             </div>
           </div>
           <div class="row">
