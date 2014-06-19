@@ -2,7 +2,7 @@ class UploadsController < ApplicationController
   # GET /uploads
   # GET /uploads.json
   def index
-    if current_user.email == "10halec@gmail.com"
+    if current_user.email == "10halec@gmail.com" || "goduke44@gmail.com"
       @uploads = Upload.all
     else
       @uploads = current_user.uploads.all
