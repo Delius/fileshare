@@ -14,7 +14,9 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
+group :production, :staging do
+  gem "pg"
+end
 gem 'less-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
