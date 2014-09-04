@@ -1,7 +1,7 @@
 Dbsite::Application.routes.draw do
   devise_for :users
   resources :uploads
- root to: "uploads#index"
+# root to: "uploads#index"
 root to: 'pages#home'
   # get "pages#home"
   # The priority is based upon order of creation: first created -> highest priority.
